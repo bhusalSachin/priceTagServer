@@ -53,7 +53,7 @@ exports.userSignIn = async (req, res) => {
       message: "Email/Password does not match in the record",
     });
 
-  const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+  const token = jwt.sign({ userId: user._id }, "VerySecretKey", {
     expiresIn: "1d",
   });
 
